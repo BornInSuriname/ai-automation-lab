@@ -1,0 +1,20 @@
+name: Controleer AI Workflow Studio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bestanden ophalen
+        uses: actions/checkout@v4
+      - name: JavaScript syntax controleren
+        run: node --check app.js
+      - name: Functionele tests uitvoeren
+        run: node --test tests/app.test.cjs
