@@ -43,7 +43,8 @@ function setup() {
   const context = vm.createContext({
     document,
     navigator: {},
-    window: { isSecureContext: true },
+    window: { isSecureContext: true, location: { search: "" } },
+    URLSearchParams,
     Blob,
     URL: { createObjectURL() { return "blob:test"; }, revokeObjectURL() {} },
     console
