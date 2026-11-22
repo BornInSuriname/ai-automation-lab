@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#13243a">
+  <meta name="description" content="AI Workflow Studio: maak duidelijke AI-opdrachten voor onderzoek, actieplannen, projecten en creatieve ideeën. Zonder account of API-sleutel.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>AI Workflow Studio | BornInSuriname</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#inhoud">Ga naar inhoud</a>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="#start" class="brand"><span class="brand-mark">AI</span> Workflow Studio</a>
+      <nav aria-label="Navigatie">
+        <a href="#studio">Studio</a>
+        <a href="#werkwijze">Werkwijze</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhoud">
+    <section class="hero" id="start">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">AI &amp; Automation Lab · Experiment 01</p>
+          <h1>Van idee naar een heldere AI-opdracht.</h1>
+          <p>Maak in drie stappen een bruikbare opdracht voor een AI-assistent. Kies je doel, beschrijf je onderwerp en kopieer het resultaat. Zonder account, API-sleutel of externe AI-dienst.</p>
+          <a class="hero-link" href="#studio">Start de opdrachtbouwer <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="studio-section" id="studio" aria-labelledby="studio-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow dark">Eenvoudig en praktisch</p>
+          <h2 id="studio-title">Bouw je opdracht</h2>
+          <p>De tool zet jouw invoer om in een gestructureerde prompt. De inhoud wordt hier niet naar een server verstuurd.</p>
+        </div>
+        <div class="studio-grid">
+          <form id="prompt-form" class="panel form-panel">
+            <fieldset>
+              <legend><span class="step">1</span> Kies het soort werk</legend>
+              <label for="workflow">Soort opdracht</label>
+              <select id="workflow" name="workflow">
+                <option value="onderzoek">Onderzoek en feitencheck</option>
+                <option value="actie">Actieplan en opvolging</option>
+                <option value="project">AI-project en automatisering</option>
+                <option value="creatief">Creatief concept</option>
+              </select>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="step">2</span> Beschrijf je idee</legend>
+              <label for="onderwerp">Onderwerp <span class="required">*</span></label>
+              <input id="onderwerp" name="onderwerp" maxlength="140" required placeholder="Bijv. toegankelijke informatie voor bewoners">
+              <span class="hint">Gebruik geen vertrouwelijke persoonsgegevens.</span>
+
+              <label for="context">Extra uitleg <span class="optional">(optioneel)</span></label>
+              <textarea id="context" name="context" rows="5" maxlength="1500" placeholder="Wat wil je bereiken? Voor wie? Welke beperking of vraag speelt er?"></textarea>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="step">3</span> Stel de kwaliteitseisen in</legend>
+              <label for="lengte">Gewenste uitwerking</label>
+              <select id="lengte" name="lengte">
+                <option value="normaal">Normaal: concreet en helder</option>
+                <option value="kort">Kort: belangrijkste punten</option>
+                <option value="uitgebreid">Uitgebreid: grondige analyse</option>
+              </select>
+              <label class="checkbox-row">
+                <input type="checkbox" id="bronnen" name="bronnen" checked>
+                <span>Vraag om verifieerbare bronnen en datums als feiten relevant zijn</span>
+              </label>
+              <label class="checkbox-row">
+                <input type="checkbox" id="tegenbewijs" name="tegenbewijs" checked>
+                <span>Laat aannames en tegenargumenten controleren</span>
+              </label>
+            </fieldset>
+            <div class="form-actions">
+              <button type="submit" class="button primary">Maak mijn opdracht</button>
+              <button type="reset" class="button secondary">Wis invoer</button>
+            </div>
+          </form>
+
+          <section class="panel output-panel" aria-labelledby="output-title">
+            <div class="output-top">
+              <div>
+                <p class="eyebrow dark">Jouw resultaat</p>
+                <h3 id="output-title">AI-opdracht</h3>
+              </div>
+              <span class="status-pill">Klaar om te maken</span>
+            </div>
+            <label for="resultaat" class="sr-only">Gegenereerde opdracht</label>
+            <textarea id="resultaat" readonly spellcheck="false" placeholder="Hier verschijnt je opdracht zodra je op ‘Maak mijn opdracht’ drukt."></textarea>
+            <div class="output-actions">
+              <button id="kopieer" type="button" class="button primary" disabled>Kopieer opdracht</button>
+              <button id="download" type="button" class="button secondary" disabled>Bewaar als .txt</button>
+            </div>
+            <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+            <p class="output-hint">Plak de opdracht vervolgens zelf in je AI-chat. Deze website voert geen AI-analyse of automatische acties uit.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section id="werkwijze" class="info-section">
+      <div class="container">
+        <h2>Wat doet deze tool?</h2>
+        <div class="info-grid">
+          <article class="info-card"><span>01</span><h3>Structureren</h3><p>Van een losse vraag naar een doel, context en heldere criteria.</p></article>
+          <article class="info-card"><span>02</span><h3>Kritisch denken</h3><p>De prompt vraagt zo nodig om broncontrole, onzekerheden en tegenargumenten.</p></article>
+          <article class="info-card"><span>03</span><h3>Uitvoeren</h3><p>Je krijgt een opdracht die je direct kunt kopiëren of als tekstbestand bewaren.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="privacy" class="privacy-section">
+      <div class="container privacy-wrap">
+        <div>
+          <p class="eyebrow dark">Privacy eerst</p>
+          <h2>Geen account. Geen tracking. Geen AI-koppeling.</h2>
+        </div>
+        <div>
+          <p>De opdracht wordt met JavaScript in je browser gemaakt. Deze versie verstuurt je invoer niet, gebruikt geen cookies en slaat je tekst niet op. Na het sluiten of verversen van het tabblad kan je invoer verdwijnen.</p>
+          <p><strong>Let op:</strong> wat je daarna zelf kopieert naar een andere AI-dienst valt onder het privacybeleid van die dienst. Deel geen medische, financiële of andere vertrouwelijke gegevens zonder goede reden.</p>
+          <p><a href="https://github.com/BornInSuriname/ai-automation-lab" target="_blank" rel="noopener noreferrer">Bekijk de broncode op GitHub</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-wrap"><p>© 2026 Fabian Vroom · AI &amp; Automation Lab</p><p>Experiment 01 · Openbare demonstratie</p></div></footer>
+</body>
+</html>
