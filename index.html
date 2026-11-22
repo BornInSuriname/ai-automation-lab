@@ -3,138 +3,117 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#13243a">
-  <meta name="description" content="AI Workflow Studio: maak duidelijke AI-opdrachten voor onderzoek, actieplannen, projecten en creatieve ideeën. Zonder account of API-sleutel.">
+  <meta name="theme-color" content="#12243a">
+  <meta name="description" content="Fabian AI Command Center: een mobielvriendelijk startpunt voor AI-opdrachten, projecten en een persoonlijk takenoverzicht.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
-  <title>AI Workflow Studio | BornInSuriname</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <title>Fabian AI Command Center</title>
+  <link rel="stylesheet" href="command-center.css">
+  <script src="command-center.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#inhoud">Ga naar inhoud</a>
-  <header class="site-header">
-    <div class="container nav-bar">
-      <a href="#start" class="brand"><span class="brand-mark">AI</span> Workflow Studio</a>
-      <nav aria-label="Navigatie">
-        <a href="#studio">Studio</a>
-        <a href="#werkwijze">Werkwijze</a>
-        <a href="#privacy">Privacy</a>
-      </nav>
+  <a class="skip-link" href="#main">Ga naar inhoud</a>
+  <header class="topbar">
+    <div class="shell bar">
+      <a class="brand" href="index.html" aria-label="Fabian AI Command Center - start"><span class="mark">F<span class="gold">.</span></span><span>FABIAN <span class="thin">/ AI</span></span></a>
+      <nav aria-label="Hoofdnavigatie"><a href="#workflows">Workflows</a><a href="#taken">Mijn taken</a><a href="#projecten">Projecten</a></nav>
     </div>
   </header>
 
-  <main id="inhoud">
-    <section class="hero" id="start">
-      <div class="container">
-        <div class="hero-copy">
-          <p class="eyebrow">AI &amp; Automation Lab · Experiment 01</p>
-          <h1>Van idee naar een heldere AI-opdracht.</h1>
-          <p>Maak in drie stappen een bruikbare opdracht voor een AI-assistent. Kies je doel, beschrijf je onderwerp en kopieer het resultaat. Zonder account, API-sleutel of externe AI-dienst.</p>
-          <a class="hero-link" href="#studio">Start de opdrachtbouwer <span aria-hidden="true">↓</span></a>
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> PERSOONLIJKE WERKPLEK · V1.0</span>
+          <h1>Jouw ideeën.<br><span class="accent">Eén vertrekpunt.</span></h1>
+          <p>Start een AI-opdracht, organiseer eenvoudige taken en open je digitale projecten. Gebouwd om te werken op je Samsung, zonder installatie.</p>
+          <div class="hero-actions"><a class="btn gold-btn" href="studio.html">Nieuwe AI-opdracht <span aria-hidden="true">↗</span></a><a class="btn ghost-btn" href="#taken">Mijn taken</a></div>
+        </div>
+        <div class="hero-summary" aria-label="Werkplekoverzicht">
+          <div class="summary-head"><span>COMMAND CENTER</span><span class="live-tag">LOCAL-FIRST</span></div>
+          <div class="summary-stat"><strong id="open-tasks">0</strong><span>open taken op dit toestel</span></div>
+          <div class="summary-rule"></div>
+          <div class="summary-line"><span>AI Workflow Studio</span><span class="indicator ready">Beschikbaar</span></div>
+          <div class="summary-line"><span>Persoonlijke taken</span><span class="indicator ready">Lokaal</span></div>
+          <div class="summary-line"><span>Externe AI-koppelingen</span><span class="indicator off">Nog niet</span></div>
+          <p>Geen account, geen synchronisatie en geen automatische AI-acties.</p>
         </div>
       </div>
     </section>
 
-    <section class="studio-section" id="studio" aria-labelledby="studio-title">
-      <div class="container">
-        <div class="section-heading">
-          <p class="eyebrow dark">Eenvoudig en praktisch</p>
-          <h2 id="studio-title">Bouw je opdracht</h2>
-          <p>De tool zet jouw invoer om in een gestructureerde prompt. De inhoud wordt hier niet naar een server verstuurd.</p>
+    <section class="section workflows" id="workflows">
+      <div class="shell">
+        <div class="section-header">
+          <div><span class="kicker">01 / SNEL STARTEN</span><h2>Wat wil je vandaag doen?</h2></div>
+          <p>Kies een opdracht. De juiste instelling wordt in de AI Workflow Studio geopend.</p>
         </div>
-        <div class="studio-grid">
-          <form id="prompt-form" class="panel form-panel">
-            <fieldset>
-              <legend><span class="step">1</span> Kies het soort werk</legend>
-              <label for="workflow">Soort opdracht</label>
-              <select id="workflow" name="workflow">
-                <option value="onderzoek">Onderzoek en feitencheck</option>
-                <option value="actie">Actieplan en opvolging</option>
-                <option value="project">AI-project en automatisering</option>
-                <option value="creatief">Creatief concept</option>
+        <div class="workflow-grid">
+          <a href="studio.html?workflow=onderzoek" class="flow-card"><span class="card-icon">01</span><h3>Onderzoeken</h3><p>Feiten, bronnen, aannames en tegenbewijs controleren.</p><span class="card-arrow">Open workflow ↗</span></a>
+          <a href="studio.html?workflow=actie" class="flow-card"><span class="card-icon">02</span><h3>Actieplan maken</h3><p>Van een idee naar stappen, verantwoordelijkheden en resultaten.</p><span class="card-arrow">Open workflow ↗</span></a>
+          <a href="studio.html?workflow=project" class="flow-card"><span class="card-icon">03</span><h3>AI-project uitwerken</h3><p>Een veilig, haalbaar prototype plannen en testen.</p><span class="card-arrow">Open workflow ↗</span></a>
+          <a href="studio.html?workflow=creatief" class="flow-card"><span class="card-icon">04</span><h3>Creatief ontwikkelen</h3><p>Concepten, teksten en ideeën sterker uitwerken.</p><span class="card-arrow">Open workflow ↗</span></a>
+        </div>
+        <p class="mini-note">De workflows maken kopieerbare opdrachten, maar voeren zelf geen onderzoek of acties uit.</p>
+      </div>
+    </section>
+
+    <section class="section tasks-section" id="taken">
+      <div class="shell">
+        <div class="section-header">
+          <div><span class="kicker">02 / ZELF ORGANISEREN</span><h2>Mijn taken</h2></div>
+          <p>Bewaar eenvoudige, niet-vertrouwelijke taken alleen in de browser op dit toestel.</p>
+        </div>
+        <div class="tasks-layout">
+          <div class="card task-editor">
+            <h3>Nieuwe taak</h3>
+            <form id="task-form">
+              <label for="task-title">Wat wil je doen?</label>
+              <textarea id="task-title" rows="3" required placeholder="Bijv. Test de AI Workflow Studio op mijn telefoon"></textarea>
+              <p class="field-hint">Geen persoonsgegevens, vertrouwelijke dossiers of wachtwoorden invoeren.</p>
+              <label for="task-category">Categorie</label>
+              <select id="task-category">
+                <option value="algemeen">Algemeen</option><option value="ai">AI & technologie</option><option value="zuidoost">Zuidoost</option><option value="creatief">Creatief</option>
               </select>
-            </fieldset>
-
-            <fieldset>
-              <legend><span class="step">2</span> Beschrijf je idee</legend>
-              <label for="onderwerp">Onderwerp <span class="required">*</span></label>
-              <input id="onderwerp" name="onderwerp" maxlength="140" required placeholder="Bijv. toegankelijke informatie voor bewoners">
-              <span class="hint">Gebruik geen vertrouwelijke persoonsgegevens.</span>
-
-              <label for="context">Extra uitleg <span class="optional">(optioneel)</span></label>
-              <textarea id="context" name="context" rows="5" maxlength="1500" placeholder="Wat wil je bereiken? Voor wie? Welke beperking of vraag speelt er?"></textarea>
-            </fieldset>
-
-            <fieldset>
-              <legend><span class="step">3</span> Stel de kwaliteitseisen in</legend>
-              <label for="lengte">Gewenste uitwerking</label>
-              <select id="lengte" name="lengte">
-                <option value="normaal">Normaal: concreet en helder</option>
-                <option value="kort">Kort: belangrijkste punten</option>
-                <option value="uitgebreid">Uitgebreid: grondige analyse</option>
-              </select>
-              <label class="checkbox-row">
-                <input type="checkbox" id="bronnen" name="bronnen" checked>
-                <span>Vraag om verifieerbare bronnen en datums als feiten relevant zijn</span>
-              </label>
-              <label class="checkbox-row">
-                <input type="checkbox" id="tegenbewijs" name="tegenbewijs" checked>
-                <span>Laat aannames en tegenargumenten controleren</span>
-              </label>
-            </fieldset>
-            <div class="form-actions">
-              <button type="submit" class="button primary">Maak mijn opdracht</button>
-              <button type="reset" class="button secondary">Wis invoer</button>
-            </div>
-          </form>
-
-          <section class="panel output-panel" aria-labelledby="output-title">
-            <div class="output-top">
-              <div>
-                <p class="eyebrow dark">Jouw resultaat</p>
-                <h3 id="output-title">AI-opdracht</h3>
+              <button class="btn dark-btn" type="submit">Taak toevoegen +</button>
+            </form>
+            <p id="task-feedback" role="status" aria-live="polite"></p>
+          </div>
+          <div class="card task-list-card">
+            <div class="task-list-top">
+              <div><h3>Takenoverzicht</h3><p id="task-count">0 taken</p></div>
+              <div class="filters" role="group" aria-label="Filter taken">
+                <button type="button" class="filter active" data-filter="all" aria-pressed="true">Alles</button>
+                <button type="button" class="filter" data-filter="open" aria-pressed="false">Open</button>
+                <button type="button" class="filter" data-filter="done" aria-pressed="false">Afgerond</button>
               </div>
-              <span class="status-pill">Klaar om te maken</span>
             </div>
-            <label for="resultaat" class="sr-only">Gegenereerde opdracht</label>
-            <textarea id="resultaat" readonly spellcheck="false" placeholder="Hier verschijnt je opdracht zodra je op ‘Maak mijn opdracht’ drukt."></textarea>
-            <div class="output-actions">
-              <button id="kopieer" type="button" class="button primary" disabled>Kopieer opdracht</button>
-              <button id="download" type="button" class="button secondary" disabled>Bewaar als .txt</button>
-            </div>
-            <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
-            <p class="output-hint">Plak de opdracht vervolgens zelf in je AI-chat. Deze website voert geen AI-analyse of automatische acties uit.</p>
-          </section>
+            <ul id="task-list" class="task-list" aria-label="Mijn taken"></ul>
+            <p id="empty-tasks" class="empty-tasks">Nog geen taken. Voeg links je eerste taak toe.</p>
+            <div class="task-footer"><button type="button" id="export-tasks" class="text-button">Exporteer taken als tekst</button><button type="button" id="clear-tasks" class="text-button danger">Wis alle taken</button></div>
+            <p class="storage-note" id="storage-message">Je taken zijn alleen op dit toestel en in deze browser opgeslagen. Wis je browsergegevens, dan kunnen ze verdwijnen.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="werkwijze" class="info-section">
-      <div class="container">
-        <h2>Wat doet deze tool?</h2>
-        <div class="info-grid">
-          <article class="info-card"><span>01</span><h3>Structureren</h3><p>Van een losse vraag naar een doel, context en heldere criteria.</p></article>
-          <article class="info-card"><span>02</span><h3>Kritisch denken</h3><p>De prompt vraagt zo nodig om broncontrole, onzekerheden en tegenargumenten.</p></article>
-          <article class="info-card"><span>03</span><h3>Uitvoeren</h3><p>Je krijgt een opdracht die je direct kunt kopiëren of als tekstbestand bewaren.</p></article>
+    <section class="section project-section" id="projecten">
+      <div class="shell">
+        <div class="section-header"><div><span class="kicker">03 / JOUW PROJECTEN</span><h2>Digitale projecten</h2></div><p>Een helder overzicht van wat bestaat en wat nog ontwikkeld kan worden.</p></div>
+        <div class="project-grid">
+          <article class="project-card"><span class="label live">ACTIEF</span><h3>AI Workflow Studio</h3><p>Opdrachten voorbereiden voor onderzoek, actieplannen, AI-projecten en creativiteit.</p><a href="studio.html">Open de studio ↗</a></article>
+          <article class="project-card"><span class="label live">ACTIEF</span><h3>Mijn GitHub</h3><p>Broncode, projectdocumentatie en versies bekijken en beheren.</p><a href="https://github.com/BornInSuriname/ai-automation-lab">Open repository ↗</a></article>
+          <article class="project-card"><span class="label future">VOORSTEL</span><h3>Zuidoost Monitor</h3><p>Een toekomstig dashboard voor openbare besluiten, afspraken en voortgang. Nog niet gekoppeld.</p><span class="inactive-link">In voorbereiding</span></article>
+          <article class="project-card"><span class="label future">VOORSTEL</span><h3>FROMU Creative Studio</h3><p>Een toekomstig overzicht voor creatieve projecten en muziekproducties. Nog niet gebouwd.</p><span class="inactive-link">In voorbereiding</span></article>
         </div>
       </div>
     </section>
 
-    <section id="privacy" class="privacy-section">
-      <div class="container privacy-wrap">
-        <div>
-          <p class="eyebrow dark">Privacy eerst</p>
-          <h2>Geen account. Geen tracking. Geen AI-koppeling.</h2>
-        </div>
-        <div>
-          <p>De opdracht wordt met JavaScript in je browser gemaakt. Deze versie verstuurt je invoer niet, gebruikt geen cookies en slaat je tekst niet op. Na het sluiten of verversen van het tabblad kan je invoer verdwijnen.</p>
-          <p><strong>Let op:</strong> wat je daarna zelf kopieert naar een andere AI-dienst valt onder het privacybeleid van die dienst. Deel geen medische, financiële of andere vertrouwelijke gegevens zonder goede reden.</p>
-          <p><a href="https://github.com/BornInSuriname/ai-automation-lab" target="_blank" rel="noopener noreferrer">Bekijk de broncode op GitHub</a>.</p>
-        </div>
+    <section class="privacy-section">
+      <div class="shell privacy-content">
+        <div><span class="kicker">PRIVACY & BEPERKINGEN</span><h2>Jij houdt de controle.</h2></div>
+        <div><p>De website heeft geen account, analysecode of AI-API-koppeling. De takenlijst gebruikt uitsluitend lokale browseropslag. Deze opslag is <strong>niet versleuteld</strong> en wordt niet tussen apparaten gesynchroniseerd. Gebruik daarom geen vertrouwelijke gegevens.</p><p>Opdrachten uit de Studio worden niet automatisch verstuurd. Als je tekst kopieert naar een andere dienst, gelden de voorwaarden van die dienst.</p></div>
       </div>
     </section>
   </main>
-
-  <footer><div class="container footer-wrap"><p>© 2026 Fabian Vroom · AI &amp; Automation Lab</p><p>Experiment 01 · Openbare demonstratie</p></div></footer>
+  <footer><div class="shell footer"><span>© 2026 Fabian Vroom · AI & Automation Lab</span><a href="https://borninsuriname.github.io/">Persoonlijk portfolio ↗</a></div></footer>
 </body>
 </html>
