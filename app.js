@@ -202,3 +202,13 @@ downloadButton.addEventListener("click", function () {
   window.setTimeout(function () { URL.revokeObjectURL(address); }, 1000);
   updateFeedback("Je tekstbestand wordt opgeslagen via je browser.");
 });
+
+
+// Only allow known workflow IDs from the dashboard; never transfer a subject via the URL.
+(function activateLinkedWorkflow() {
+  const params = new URLSearchParams(window.location.search);
+  const chosen = params.get("workflow");
+  if (chosen && Object.prototype.hasOwnProperty.call(WORKFLOWS, chosen)) {
+    workflow.value = chosen;
+  }
+})();
