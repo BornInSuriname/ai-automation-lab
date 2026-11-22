@@ -1,73 +1,79 @@
-# AI & Automation Lab
+# Fabian AI Command Center
 
-Een openbaar experimenteerproject van Fabian Vroom, gemaakt om **AI praktisch en begrijpelijk** te gebruiken.
+**Eén startpagina voor AI-opdrachten, persoonlijke taken en digitale projecten.** Een open-source experiment van Fabian Vroom, ontworpen om ook op een Samsung-telefoon te gebruiken.
 
-## Experiment 01: AI Workflow Studio
+## Open de website
 
-De eerste werkende demonstratie is een **mobielvriendelijke opdrachtbouwer**. Je kiest het soort taak, vult een onderwerp in en maakt een gestructureerde opdracht voor een AI-chat.
+**[Fabian AI Command Center](https://borninsuriname.github.io/ai-automation-lab/)**
 
-**Open de webtool:** https://borninsuriname.github.io/ai-automation-lab/
+De website heeft momenteel twee werkende onderdelen.
 
-### Wat werkt er?
+### 1. AI Workflow Studio
 
-- Vier soorten opdrachten: **onderzoek en feitencheck**, **actieplan**, **AI-project en automatisering**, **creatief concept**.
-- Eigen onderwerp en optionele context invullen.
-- Keuze uit een korte, normale of uitgebreide uitwerking.
-- Opties voor verifieerbare bronnen en controle van aannames/tegenargumenten.
-- De gemaakte opdracht kopiëren of als **.txt** opslaan.
-- Geschikt voor mobiel en toetsenbordbediening, met een interface in het Nederlands.
+Open rechtstreeks: [AI Workflow Studio](https://borninsuriname.github.io/ai-automation-lab/studio.html).
 
-**Belangrijk:** de studio **bouwt prompts**, maar is geen zelfstandige AI-agent, voert geen onderzoek uit, controleert zelf geen bronnen en start geen automatische processen. De gebruiker kiest zelf in welke AI-chat de opdracht wordt gebruikt.
+- Maak een bruikbare AI-opdracht voor onderzoek, actieplannen, AI-projecten of creatieve concepten.
+- Beschrijf je volledige onderzoeksvraag in een **meerregelig onderwerpveld zonder korte tekenlimiet**. Extra context kan in het tweede tekstvak.
+- Kies tussen beknopte, normale en uitgebreide instructies.
+- Vraag in de prompt om verifieerbare bronnen, onzekerheden en tegenargumenten.
+- Kopieer de prompt of bewaar die als .txt-bestand.
 
-### Gebruik op je telefoon
+**De Studio gebruikt geen AI-API.** Zij stelt prompts op maar voert zelf geen onderzoek of acties uit.
 
-1. Open de [AI Workflow Studio](https://borninsuriname.github.io/ai-automation-lab/) in je browser.
-2. Kies **Soort opdracht** en vul **Onderwerp** in.
-3. Voeg eventueel context toe en kies je kwaliteitsinstellingen.
-4. Druk op **Maak mijn opdracht**.
-5. Kies **Kopieer opdracht** en plak de tekst in een AI-chat naar keuze.
+### 2. Mijn taken (lokaal)
 
-### Privacy en veiligheid
+- Voeg taken toe, kies een categorie en vink afgeronde taken af.
+- Filter op open of afgeronde taken.
+- Verwijder taken, wis alle taken of exporteer een lokaal tekstbestand.
+- De takenlijst wordt **uitsluitend in lokale browseropslag (localStorage)** opgeslagen. Er is geen account of synchronisatie. Op een ander apparaat zie je deze taken niet.
 
-- Deze demonstratie verwerkt de tekst **lokaal in de browser** met JavaScript.
-- Geen API-sleutels, account, analytics, trackers of netwerkverzoeken naar een AI-dienst.
-- De invoer wordt in deze versie niet op een server opgeslagen.
-- Wat je **zelf** vervolgens in een AI-chat plakt, valt onder de voorwaarden van die dienst.
-- **Voer geen vertrouwelijke persoonsgegevens, wachtwoorden, API-sleutels of niet-openbare dossiers in.**
+**Privacy en beperkingen:** lokale browseropslag is niet versleuteld. Andere gebruikers van hetzelfde browserprofiel kunnen mogelijk bij de gegevens. Bewaar hier dus geen persoonlijke dossiers, medische/financiële informatie, wachtwoorden of API-sleutels. Taken kunnen verdwijnen wanneer je browsergegevens verwijdert. Exporteer ze als je een back-up nodig hebt.
 
-### Techniek
+### Projectoverzicht
 
-Statische website zonder frameworks, dependencies of buildstap:
+Het Command Center bevat directe links naar de werkende Studio en GitHub-repository. **Zuidoost Monitor** en **FROMU Creative Studio** worden als mogelijke toekomstige projecten vermeld; ze zijn **niet** gebouwd of gekoppeld.
 
-| Bestand | Functie |
+## Technologie
+
+Alle onderdelen zijn statische bestanden, zonder externe scripts, accounts of vereiste betaalde diensten:
+
+| Bestand | Doel |
 |---|---|
-| `index.html` | Toegankelijke HTML-interface |
-| `styles.css` | Responsive ontwerp |
-| `app.js` | Promptlogica, kopiëren en opslaan |
-| `.nojekyll` | Directe publicatie als statische GitHub Pages-site |
+| `index.html` | Command Center-startpagina |
+| `command-center.css` | Responsief dashboard |
+| `command-center.js` | Lokale takenlijst, filters en export |
+| `studio.html` | AI Workflow Studio met uitgebreid onderwerpveld |
+| `styles.css` | Stijl van de Studio |
+| `app.js` | Generator voor gestructureerde opdrachten |
+| `tests/` | Geautomatiseerde functionele controles |
+| `.github/workflows/check.yml` | GitHub Actions-testworkflow |
 
-De website kan ook lokaal worden bekeken door `index.html` te openen. Voor automatisch kopiëren is in sommige browsers HTTPS of een beveiligde context nodig; daarom is een handmatige terugval ingebouwd.
+Je kunt het project lokaal openen door `index.html` te openen. De website staat op GitHub Pages, vanaf de `main`-branch.
 
-### Handmatige acceptatiecontrole
+## Tests en kwaliteitsborging
 
-- [ ] Leeg onderwerp geeft een validatiemelding.
-- [ ] Alle vier soorten taken leveren een andere passende opdracht.
-- [ ] De knoppen **Kopieer** en **Bewaar** werken na genereren.
-- [ ] **Wis invoer** wist ook het eerdere resultaat.
-- [ ] De interface blijft bruikbaar op een smal telefoonscherm.
-- [ ] Geen persoonlijke informatie of netwerkverzoeken naar externe AI-diensten.
+GitHub Actions controleert JavaScript-syntax en draait Node-tests bij wijzigingen. Het testpakket omvat onder meer opdrachtgeneratie, onderwerpveld, lokale taken, filters, verwijderen en veilige tekstverwerking.
 
-Dit is een testlijst, **geen verklaring dat alle browsertests al zijn uitgevoerd**.
+Automatische tests vervangen **geen** handmatige test in Samsung Internet of Chrome op je eigen telefoon.
 
-### Wat volgt?
+## Werkwijze en veiligheid
 
-1. Een kleine bibliotheek met herbruikbare workflows.
-2. Versiebeheer van prompts en een eenvoudige kwaliteitstest.
-3. Verkennen of **echte** automatisering nodig en verantwoord is, vóórdat externe accounts of gegevens worden gekoppeld.
+- De website vraagt geen wachtwoorden of API-sleutels.
+- Er zitten geen trackers, analytische scripts of externe AI-diensten in deze versie.
+- De Studio verstuurt je ingevoerde opdracht niet. Je kiest zelf of en waar je tekst plakt.
+- De lokale takenlijst staat niet op GitHub: in GitHub staat alleen de **broncode**, niet je taken.
+- Er is nog geen geautomatiseerde aansturing van apps, berichten of externe accounts.
 
-## Auteurschap
+## Volgende ontwikkelstappen (voorstellen)
+
+1. Het mobiel gebruik verbeteren op basis van praktijkervaring.
+2. Een bibliotheek met herbruikbare promptsjablonen toevoegen.
+3. Onderzoeken of beveiligde externe koppelingen zinvol zijn; nooit tokens in openbare broncode plaatsen.
+4. Pas daarna aanvullende modules ontwikkelen.
+
+## Eigenaar
 
 Fabian Vroom · Amsterdam Zuidoost  
-Persoonlijk portfolio: https://borninsuriname.github.io/
+[GitHub-profiel](https://github.com/BornInSuriname) · [Persoonlijk portfolio](https://borninsuriname.github.io/)
 
-*English: This is a small, privacy-conscious browser tool for creating structured prompts. It does not call an AI model or run automations.*
+*This is a static, privacy-conscious browser dashboard for AI prompts and non-sensitive local tasks, not a connected autonomous AI agent.*
