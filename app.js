@@ -212,3 +212,20 @@ downloadButton.addEventListener("click", function () {
     workflow.value = chosen;
   }
 })();
+
+
+// Reusable, non-sensitive built-in templates. Accept only exact IDs from the local list.
+(function applyPresetFromLibrary() {
+  const presetId = new URLSearchParams(window.location.search).get("preset");
+  if (!presetId || !/^[a-z0-9-]{1,40}$/.test(presetId)) return;
+  const approved = Array.isArray(window.AI_PRESETS) ? window.AI_PRESETS : [];
+  const preset = approved.find(function (item) { return item.id === presetId; });
+  if (!preset || !Object.prototype.hasOwnProperty.call(WORKFLOWS, preset.workflow)) return;
+  workflow.value = preset.workflow;
+  subject.value = preset.subject;
+  context.value = preset.context;
+  length.value = Object.prototype.hasOwnProperty.call(FORMATS, preset.length) ? preset.length : "normaal";
+  sources.checked = preset.sources === true;
+  counterevidence.checked = preset.counterevidence === true;
+  updateFeedback("Sjabloon geladen: " + preset.title + ". Pas de tekst aan en kies ‘Maak mijn opdracht’.");
+})();
