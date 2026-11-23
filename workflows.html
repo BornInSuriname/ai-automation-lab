@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12243a">
+  <meta name="description" content="Herbruikbare AI-workflows voor onderzoek, bestuurlijke vragen, automatisering en creatieve projecten.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <title>Workflowbibliotheek | Fabian AI Command Center</title>
+  <link rel="stylesheet" href="command-center.css">
+  <link rel="stylesheet" href="workflow-library.css">
+  <script src="presets.js" defer></script>
+  <script src="workflow-library.js" defer></script>
+</head>
+<body>
+  <a href="#inhoud" class="skip-link">Ga naar inhoud</a>
+  <header class="topbar">
+    <div class="shell bar">
+      <a class="brand" href="index.html"><span class="mark">F<span class="gold">.</span></span><span>FABIAN <span class="thin">/ AI</span></span></a>
+      <nav aria-label="Navigatie">
+        <a href="index.html">Command Center</a>
+        <a href="studio.html">AI Studio</a>
+        <a href="#templates" aria-current="page">Workflows</a>
+      </nav>
+    </div>
+  </header>
+  <main id="inhoud">
+    <section class="library-hero">
+      <div class="shell">
+        <span class="eyebrow">V1.1 · HERBRUIKBARE OPDRACHTEN</span>
+        <h1>Begin niet<br>steeds opnieuw.</h1>
+        <p>Kies een vooraf opgebouwd werkproces en pas de onderwerpregel en context aan. Alles blijft lokaal in je browser totdat je de opdracht zelf kopieert naar een AI-chat.</p>
+        <a href="#templates" class="btn gold-btn">Bekijk workflows <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+    <section class="section" id="templates">
+      <div class="shell">
+        <div class="section-header">
+          <div><span class="kicker">BIBLIOTHEEK / 8 SJABLONEN</span><h2>Kies jouw startpunt</h2></div>
+          <p>Deze workflows zijn hulpmiddelen voor het formuleren van opdrachten. Ze zijn geen uitgevoerde onderzoeken of gekoppelde AI-agents.</p>
+        </div>
+        <div class="library-controls">
+          <div>
+            <label for="template-search">Zoek op onderwerp</label>
+            <input type="search" id="template-search" placeholder="Bijvoorbeeld: wonen, muziek of automatisering" autocomplete="off">
+          </div>
+          <div>
+            <label for="template-filter">Categorie</label>
+            <select id="template-filter">
+              <option value="Alle">Alle categorieën</option>
+              <option value="Zuidoost">Zuidoost</option>
+              <option value="Technologie">Technologie</option>
+              <option value="Creatief">Creatief</option>
+            </select>
+          </div>
+        </div>
+        <p class="library-count" id="template-count" role="status" aria-live="polite">Workflows laden…</p>
+        <div class="library-grid" id="template-grid"></div>
+        <p id="template-empty" class="empty-state" hidden>Geen workflows gevonden. Probeer een andere zoekterm.</p>
+        <noscript>Voor deze bibliotheek is JavaScript nodig. Je kunt de <a href="studio.html">AI Studio</a> ook zonder sjabloon gebruiken.</noscript>
+      </div>
+    </section>
+    <section class="library-advice">
+      <div class="shell advice-grid">
+        <div><span class="kicker">VEILIG WERKEN</span><h2>Jij kiest wat je deelt.</h2></div>
+        <div>
+          <p>De onderwerpen en voorbeeldinstructies bevatten geen privégegevens. Je aanpassingen worden niet automatisch bewaard en er is geen AI-koppeling. Plak geen vertrouwelijke dossiers, namen van bewoners of API-sleutels in de openbare webtool.</p>
+          <p>Voor externe koppelingen geldt: onderzoek eerst noodzaak, minimale rechten, kosten en hoe je toegang kunt intrekken. Een sjabloon koppelt niet automatisch een app.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="shell footer"><span>© 2026 Fabian Vroom · AI & Automation Lab</span><a href="index.html">Terug naar Command Center ↗</a></div></footer>
+</body>
+</html>
