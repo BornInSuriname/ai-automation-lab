@@ -1,4 +1,4 @@
-name: Controleer AI Workflow Studio
+name: Controleer AI Command Center
 
 on:
   push:
@@ -18,5 +18,9 @@ jobs:
         run: node --check app.js
       - name: Command Center syntax controleren
         run: node --check command-center.js
+      - name: Workflowbibliotheek syntax controleren
+        run: |
+          node --check presets.js
+          node --check workflow-library.js
       - name: Functionele tests uitvoeren
         run: node --test tests/*.test.cjs
